@@ -1,0 +1,11 @@
+libcgc (1276-cqe-kickoff-release) UNRELEASED; urgency=low
+
+  * build
+
+ -- Brian Caswell <bmc@lungetech.com>  Thu, 29 May 2014 17:36:48 +0000
+
+libcgc (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Brian Caswell <bmc@lungetech.com>  Wed, 05 Mar 2014 17:43:19 +0000
