@@ -1,0 +1,11 @@
+libcgc (2485-scored-event-2) UNRELEASED; urgency=low
+
+  * build
+
+ -- Brian Caswell <bmc@lungetech.com>  Fri, 24 Oct 2014 14:26:44 +0000
+
+libcgc (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Brian Caswell <bmc@lungetech.com>  Wed, 05 Mar 2014 17:43:19 +0000
