@@ -28,16 +28,15 @@ semantics associated with each corresponding system call as implemented on
 the Linux operating system.  Each system call below is fully described in its
 own manual page.
 
-Name         Number
-----------  --------
-_terminate       1
-transmit         2
-receive          3
-fdwait           4
-allocate         5
-deallocate       6
-random           7
-----------  --------
+Name       |  Number
+---------- | --------
+_terminate |      1
+transmit   |      2
+receive    |      3
+fdwait     |      4
+allocate   |      5
+deallocate |      6
+random     |      7
 
 A prototype for each system call is given in libcgc.h and a reference
 implementation can be found in libcgc.a.
@@ -50,15 +49,15 @@ system call number must be placed in the eax register. Arguments to a
 system call function are passed via registers ebx, ecx, edx, esi, edi,
 and ebp as summarized in the following table:
 
- Register   Purpose
-----------  -------------------------------------------
-  eax       Contains system call number
-  ebx       First argument to function
-  ecx       Second argument to function (if required)
-  edx       Third argument to function (if required)
-  esi       Fourth argument to function (if required)
-  edi       Fifth argument to function (if required)
-  ebp       Sixth argument to function (if required)
+| Register  | Purpose |
+| --- | --- |
+|  eax      | Contains system call number |
+|  ebx      | First argument to function |
+|  ecx      | Second argument to function (if required) |
+|  edx      | Third argument to function (if required) |
+|  esi      | Fourth argument to function (if required) |
+|  edi      | Fifth argument to function (if required) |
+|  ebp      | Sixth argument to function (if required) |
 
 Invocation of a system call function is accomplished through the use of
 the 'int 0x80' instruction. All system calls that return, return a
@@ -91,30 +90,29 @@ for use by CBs. The definitions of these symbols may not be the
 same as the host operating system.
 
 Symbol
----------- ----------
-EBADF
-EFAULT
-EINVAL
-ENOMEM
-ENOSYS
-EPIPE
-FD_CLR
-FD_ISSET
-_fd_mask
-fd_set
-FD_SET
-FD_SETSIZE
-FD_ZERO
-_NFDBITS
-NULL
-SIZE_MAX
-size_t
-SSIZE_MAX
-ssize_t
-STDERR
-STDIN
-STDOUT
-timeval
+* EBADF
+* EFAULT
+* EINVAL
+* ENOMEM
+* ENOSYS
+* EPIPE
+* FD_CLR
+* FD_ISSET
+* _fd_mask
+* fd_set
+* FD_SET
+* FD_SETSIZE
+* FD_ZERO
+* _NFDBITS
+* NULL
+* SIZE_MAX
+* size_t
+* SSIZE_MAX
+* ssize_t
+* STDERR
+* STDIN
+* STDOUT
+* timeval
 
 # Initial State
 
@@ -123,25 +121,24 @@ given below.
 
 ## Initial General Purpose Register State
 
-Register       Value
---------  ----------
-EAX                0
-EBX                0
-ECX                0
-EDX                0
-EDI                0
-ESI                0
-ESP       0xbaaaaffc
-EBP                0
-EIP          [note1]
-EFLAGS         0x202
-CS           [note2]
-DS           [note2]
-ES                DS
-FS                DS
-GS                DS
-SS                DS
---------  ----------
+Register |    Value
+-------- | ----------
+EAX      |          0
+EBX      |          0
+ECX      |          0
+EDX      |          0
+EDI      |          0
+ESI      |          0
+ESP      | 0xbaaaaffc
+EBP      |          0
+EIP      |    [note1]
+EFLAGS   |      0x202
+CS       |    [note2]
+DS       |    [note2]
+ES       |         DS
+FS       |         DS
+GS       |         DS
+SS       |         DS
 
 note1: The EIP is set to the value of "c_entry" specified in the header
 of the CGC binary being loaded.
@@ -155,16 +152,16 @@ The value of the EFLAGS register means that interrupts are enabled
 
 ## Initial Floating Point Unit Register State
 
-Register             Value
-------------------- ------
-Control             0x037f
-Status                   0
-Tag                 0xffff
-Opcode                   0
-Instruction Pointer      0
-Data Pointer             0
-R0, R1, R2, R3           0
-R4, R5, R6, R7           0
+Register        |     Value
+-------------------| ------
+Control            | 0x037f
+Status             |      0
+Tag                | 0xffff
+Opcode             |      0
+Instruction Pointer|      0
+Data Pointer       |      0
+R0, R1, R2, R3     |      0
+R4, R5, R6, R7     |      0
 
 The Control register value is decoded as follows:
 rounding control = 0 (round closes to infinitely precise result,
@@ -182,11 +179,10 @@ the registers are aliased to the same storage.
 
 ## Initial XMM Register State (SSE)
 
-Register         Value
---------------- ------
-MXCSR           0x1f80
-XMM0 ... XMM15       0
---------------- ------
+Register       |  Value
+---------------| ------
+MXCSR          | 0x1f80
+XMM0 ... XMM15 |      0
 
 The MXCSR is decoded as follows:
 flush to zero: disabled
