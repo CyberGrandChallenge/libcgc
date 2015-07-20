@@ -1,0 +1,11 @@
+libcgc (7170-cfe-alpha) UNRELEASED; urgency=low
+
+  * build
+
+ -- Brian Caswell <bmc@lungetech.com>  Thu, 16 Jul 2015 22:31:22 +0000
+
+libcgc (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Brian Caswell <bmc@lungetech.com>  Wed, 05 Mar 2014 17:43:19 +0000
